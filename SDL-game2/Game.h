@@ -1,6 +1,8 @@
 #pragma once
 #include <SDL.h>
 
+#include "TextureManager.h"
+
 #ifndef __Game__
 #define __Game__
 
@@ -24,9 +26,7 @@ private:
    SDL_Window* m_pWindow = 0;
    SDL_Renderer* m_pRenderer = 0;
 
-   SDL_Texture* m_pTexture; // the new SDL_Texture variable
-   SDL_Rect m_sourceRectangle; // the first rectangle
-   SDL_Rect m_destinationRectangle; // another rectangle
+   int m_currentFrame;
 
    bool m_bRunning;
 };
