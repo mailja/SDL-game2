@@ -12,7 +12,7 @@ public:
    // simply set the running variable to true
    void init() { m_bRunning = true; }
    void render();
-   void update() {}
+   void update();
    void handleEvents();
    void clean();
    // a function to access the private running variable
