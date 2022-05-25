@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL.h>
-
+#include "Player.h"
 #include "TextureManager.h"
 
 #ifndef __Game__
@@ -29,6 +29,9 @@ private:
    int m_currentFrame;
 
    bool m_bRunning;
+
+   GameObject m_go;
+   Player m_player;
 };
 
 #endif /* defined(__Game__) */
