@@ -1,6 +1,10 @@
 #include "Game.h"
 #include <iostream>
 #include <SDL_image.h>
+#include <vector>
+
+
+#include "Enemy.h"
 #include "TextureManager.h"
 
 bool Game::init(const char* title, int xpos, int ypos, int width,
@@ -44,8 +48,17 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
          return false;
       }
 
-      m_go.load(100, 100, 128, 82, "animate");
-      m_player.load(300, 300, 128, 82, "animate");
+      m_go = new GameObject();
+      m_player = new Player();
+      m_enemy = new Enemy();
+
+      m_go->load(100, 100, 128, 82, "animate");
+      m_player->load(300, 300, 128, 82, "animate");
+      m_enemy->load(0, 0, 128, 82, "animate");
+
+      m_gameObjects.push_back(m_go);
+      m_gameObjects.push_back(m_player);
+      m_gameObjects.push_back(m_enemy);
        
    }
    else
@@ -61,15 +74,21 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
 void Game::render()
 {
    SDL_RenderClear(m_pRenderer); // clear the renderer to the draw color
-   m_go.draw(m_pRenderer);
-   m_player.draw(m_pRenderer);
+   // loop through our objects and draw them
+   for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+   {
+      m_gameObjects[i]->draw(m_pRenderer);
+   }
    SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
 
 void Game::update()
 {
-   m_go.update();
-   m_player.update();
+   // loop through and update our objects
+   for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+   {
+      m_gameObjects[i]->update();
+   }
 }
 
 void Game::clean()
@@ -93,5 +112,13 @@ void Game::handleEvents()
       default:
          break;
       }
+   }
+}
+
+void Game::draw()
+{
+   for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+   {
+      m_gameObjects[i]->draw(m_pRenderer);
    }
 }
