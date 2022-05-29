@@ -3,10 +3,6 @@
 #include <SDL_render.h>
 #include <string>
 
-class TextureManager;
-typedef TextureManager TheTextureManager;
-
-
 class TextureManager
 {
 private:
@@ -38,3 +34,5 @@ public:
    }
 
 };
+
+typedef TextureManager TheTextureManager;

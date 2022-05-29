@@ -3,19 +3,24 @@
 #include <SDL_timer.h>
 
 
-void Enemy::load(int x, int y, int width, int height, std::string textureID)
+Enemy::Enemy(const LoaderParams* pParams) :
+   SDLGameObject(pParams)
 {
-   GameObject::load(x, y, width, height, textureID);
+
 }
 
-void Enemy::draw(SDL_Renderer* pRenderer)
+
+void Enemy::draw()
 {
-   GameObject::draw(pRenderer);
+   SDLGameObject::draw(); // we now use SDLGameObject
 }
 
 void Enemy::update()
 {
-   m_y += 1;
-   m_x += 1;
-   m_currentFrame = int(((SDL_GetTicks() / 100) % 6));
+   m_position.setX(m_position.getX() + 1);
+   m_position.setY(m_position.getY() + 1);
+}
+
+void Enemy::clean()
+{
 }
