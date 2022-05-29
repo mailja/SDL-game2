@@ -77,21 +77,24 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
 void Game::render()
 {
    SDL_RenderClear(m_pRenderer); // clear the renderer to the draw color
-   // loop through our objects and draw them
-   for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-   {
-      m_gameObjects[i]->draw();
-   }
+   //// loop through our objects and draw them
+   //for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+   //{
+   //   m_gameObjects[i]->draw();
+   //}
+
+   m_pGameStateMachine->render();
    SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
 
 void Game::update()
 {
-   // loop through and update our objects
-   for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-   {
-      m_gameObjects[i]->update();
-   }
+   //// loop through and update our objects
+   //for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+   //{
+   //   m_gameObjects[i]->update();
+   //}
+   m_pGameStateMachine->update();
 }
 
 void Game::clean()
