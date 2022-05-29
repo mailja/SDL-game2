@@ -15,26 +15,29 @@ public:
       }
       return s_pInstance;
    }
+
+   // init joysticks
    void initialiseJoysticks();
    bool joysticksInitialised() const { return m_bJoysticksInitialised; }
 
    //void reset();
 
+   // update and clean the input handler
    void update();
    void clean();
 
-   int xvalue(int joy, int stick);
-   int yvalue(int joy, int stick);
+   // joystick events
+   int getAxisX(int joy, int stick) const;
+   int getAxisY(int joy, int stick) const;
 private:
    InputHandler();
 
    ~InputHandler() {}
    static InputHandler* s_pInstance;
 
+   // joystick specific
    std::vector<SDL_Joystick*> m_joysticks;
-
    std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;
-
    bool m_bJoysticksInitialised;
    const int m_joystickDeadZone = 10000;  // ToDo : Change according to concrete controller
 };
