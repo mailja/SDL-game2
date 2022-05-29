@@ -6,6 +6,8 @@
 
 #include "Enemy.h"
 #include "InputHandler.h"
+#include "MenuState.h"
+#include "PlayState.h"
 #include "TextureManager.h"
 
 Game* Game::s_pInstance = nullptr;
@@ -58,6 +60,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
          "animate")));
 
       TheInputHandler::Instance()->initialiseJoysticks();
+
+      m_pGameStateMachine = new GameStateMachine();
+      m_pGameStateMachine->changeState(new MenuState());
    }
    else
    {
@@ -106,6 +111,10 @@ void Game::quit()
 void Game::handleEvents()
 {
    TheInputHandler::Instance()->update();
+   if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+   {
+      m_pGameStateMachine->changeState(new PlayState());
+   }
 }
 
 void Game::draw()
