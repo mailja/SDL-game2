@@ -41,6 +41,7 @@ public:
 
    // mouse events
    bool getMouseButtonState(int buttonNumber) const;
+   Vector2D* getMousePosition() const;
 
 
 private:
@@ -58,6 +59,7 @@ private:
 
    // mouse specific
    std::vector<bool> m_mouseButtonStates;
+   Vector2D* m_mousePosition;
 
 };
 
