@@ -22,7 +22,6 @@ void MenuButton::update()
       && pMousePos->getY() < (m_position.getY() + m_height)
       && pMousePos->getY() > m_position.getY())
    {
-      m_currentFrame = MOUSE_OVER;
       if (TheInputHandler::Instance()->getMouseButtonState(LEFT) && m_bReleased)
       {
          m_currentFrame = CLICKED;
@@ -32,7 +31,7 @@ void MenuButton::update()
       else if (!TheInputHandler::Instance()->getMouseButtonState(LEFT))
       {
          m_bReleased = true;
-         m_currentFrame = MOUSE_OUT;
+         m_currentFrame = MOUSE_OVER;
       }
    }
    else
