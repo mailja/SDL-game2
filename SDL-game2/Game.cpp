@@ -5,6 +5,7 @@
 
 
 #include "Enemy.h"
+#include "InputHandler.h"
 #include "TextureManager.h"
 
 Game* Game::s_pInstance = nullptr;
@@ -55,7 +56,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
 
       m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82,
          "animate")));
-       
+
+      TheInputHandler::Instance()->initialiseJoysticks();
    }
    else
    {
@@ -90,25 +92,20 @@ void Game::update()
 void Game::clean()
 {
    std::cout << "cleaning game\n";
+   TheInputHandler::Instance()->clean();
    SDL_DestroyWindow(m_pWindow);
    SDL_DestroyRenderer(m_pRenderer);
    SDL_Quit();
 }
 
+void Game::quit()
+{
+   SDL_Quit();
+}
+
 void Game::handleEvents()
 {
-   SDL_Event event;
-   if (SDL_PollEvent(&event))
-   {
-      switch (event.type)
-      {
-      case SDL_QUIT:
-         m_bRunning = false;
-         break;
-      default:
-         break;
-      }
-   }
+   TheInputHandler::Instance()->update();
 }
 
 void Game::draw()

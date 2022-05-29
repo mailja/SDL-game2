@@ -8,9 +8,6 @@
 #ifndef __Game__
 #define __Game__
 
-class Game;
-typedef Game TheGame;
-
 class Game
 {
 public:
@@ -31,6 +28,7 @@ public:
    void handleEvents();
    void draw();
    void clean();
+   void quit();
    // a function to access the private running variable
    bool running() { return m_bRunning; }
 
@@ -59,6 +57,7 @@ private:
    GameObject* m_enemy;
 
 };
+typedef Game TheGame;
 
 #endif /* defined(__Game__) */
 
