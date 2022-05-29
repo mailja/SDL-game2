@@ -26,6 +26,7 @@ public:
 
    // init joysticks
    void initialiseJoysticks();
+   bool isKeyDown(SDL_Scancode key) const;
    bool joysticksInitialised() const { return m_bJoysticksInitialised; }
 
    //void reset();
@@ -49,6 +50,15 @@ private:
 
    ~InputHandler() {}
    static InputHandler* s_pInstance;
+
+
+
+   // handle keyboard events
+   void onKeyDown();
+   void onKeyUp();
+
+   // keyboard specific
+   const Uint8* m_keystates;
 
    // joystick specific
    std::vector<SDL_Joystick*> m_joysticks;

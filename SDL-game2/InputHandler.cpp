@@ -70,6 +70,24 @@ void InputHandler::initialiseJoysticks()
    }
 }
 
+bool InputHandler::isKeyDown(SDL_Scancode key) const
+{
+   if (m_keystates != 0)
+   {
+      if (m_keystates[key] == 1)
+      {
+         return true;
+      }
+      else
+      {
+         return false;
+      }
+   }
+
+   return false;
+}
+
+
 int InputHandler::getAxisX(int joy, int stick) const
 {
    if (m_joystickValues.size() > 0)
@@ -138,6 +156,8 @@ void InputHandler::  update()
       {
          TheGame::Instance()->quit();
       }
+
+      m_keystates = SDL_GetKeyboardState(0);
 
       if (event.type == SDL_JOYAXISMOTION)
       {
