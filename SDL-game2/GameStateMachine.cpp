@@ -26,11 +26,8 @@ void GameStateMachine::popState()
 {
    if (!m_gameStates.empty())
    {
-      if (m_gameStates.back()->onExit())
-      {
-         delete m_gameStates.back();
-         m_gameStates.pop_back();
-      }
+      m_gameStates.back()->onExit();
+      m_gameStates.pop_back();
    }
 }
 
@@ -42,11 +39,9 @@ void GameStateMachine::changeState(GameState* pState)
       {
          return; // do nothing
       }
-      if (m_gameStates.back()->onExit())
-      {
-         delete m_gameStates.back();
-         m_gameStates.pop_back();
-      }
+
+      m_gameStates.back()->onExit();
+      m_gameStates.pop_back();
    }
 
    // push back our new state
