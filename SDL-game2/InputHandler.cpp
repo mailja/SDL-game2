@@ -6,6 +6,10 @@
 
 InputHandler* InputHandler::s_pInstance = nullptr;
 
+InputHandler::InputHandler() : m_bJoysticksInitialised(false)
+{
+}
+
 void InputHandler::initialiseJoysticks()
 {
    // if we haven't already initialised the joystick subystem, we will do it here
@@ -30,6 +34,17 @@ void InputHandler::initialiseJoysticks()
             // create a pair of values for the axes, a vector for each stick
             m_joystickValues.push_back(std::make_pair(new
                Vector2D(0, 0), new Vector2D(0, 0))); // add our pair
+
+            // create an array to hold the button values
+            std::vector<bool> tempButtons;
+
+            // fill the array with a false value for each button
+            for (int j = 0; j < SDL_JoystickNumButtons(joy); j++)
+            {
+               tempButtons.push_back(false);
+            }
+            // push the button array into the button state array
+            m_buttonStates.push_back(tempButtons);
          }
          else
          {
@@ -81,9 +96,9 @@ int InputHandler::getAxisY(int joy, int stick) const
    return 0;
 }
 
-
-InputHandler::InputHandler(): m_bJoysticksInitialised(false)
+bool InputHandler::getButtonState(int joy, int buttonNumber) const
 {
+   return m_buttonStates[joy][buttonNumber];
 }
 
 void InputHandler::clean()
@@ -177,6 +192,17 @@ void InputHandler::update()
                m_joystickValues[whichOne].second->setY(0);
             }
          }
+      }
+
+      if (event.type == SDL_JOYBUTTONDOWN)
+      {
+         int whichOne = event.jaxis.which;
+         m_buttonStates[whichOne][event.jbutton.button] = true;
+      }
+      if (event.type == SDL_JOYBUTTONUP)
+      {
+         int whichOne = event.jaxis.which;
+         m_buttonStates[whichOne][event.jbutton.button] = false;
       }
 
    }

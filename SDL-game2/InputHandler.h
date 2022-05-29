@@ -29,6 +29,8 @@ public:
    // joystick events
    int getAxisX(int joy, int stick) const;
    int getAxisY(int joy, int stick) const;
+   bool getButtonState(int joy, int buttonNumber) const;
+
 private:
    InputHandler();
 
@@ -38,6 +40,7 @@ private:
    // joystick specific
    std::vector<SDL_Joystick*> m_joysticks;
    std::vector<std::pair<Vector2D*, Vector2D*>> m_joystickValues;
+   std::vector<std::vector<bool>> m_buttonStates;
    bool m_bJoysticksInitialised;
    const int m_joystickDeadZone = 10000;  // ToDo : Change according to concrete controller
 };
