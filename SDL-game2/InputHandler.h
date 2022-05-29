@@ -49,13 +49,24 @@ private:
    InputHandler();
 
    ~InputHandler() {}
+
+   // singleton
    static InputHandler* s_pInstance;
 
-
-
-   // handle keyboard events
+   // private functions to handle different event types
+// handle keyboard events
    void onKeyDown();
    void onKeyUp();
+   // handle mouse events
+   void onMouseMove(SDL_Event& event);
+   void onMouseButtonDown(SDL_Event& event);
+   void onMouseButtonUp(SDL_Event& event);
+   // handle joysticks events
+   void onJoystickAxisMove(SDL_Event& event);
+   void onJoystickButtonDown(SDL_Event& event);
+   void onJoystickButtonUp(SDL_Event& event);
+
+   // member variables
 
    // keyboard specific
    const Uint8* m_keystates;
