@@ -4,6 +4,7 @@
 
 #include "Player.h"
 #include "TextureManager.h"
+#include "GameStateMachine.h"
 
 #ifndef __Game__
 #define __Game__
@@ -36,6 +37,8 @@ public:
       height, bool fullscreen);
 
    SDL_Renderer* getRenderer() const { return m_pRenderer; }
+   GameStateMachine* m_pGameStateMachine;
+   GameStateMachine* getStateMachine() { return m_pGameStateMachine; }
 
 private:
 

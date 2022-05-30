@@ -6,6 +6,8 @@
 
 #include "Enemy.h"
 #include "InputHandler.h"
+#include "MenuState.h"
+#include "PlayState.h"
 #include "TextureManager.h"
 
 Game* Game::s_pInstance = nullptr;
@@ -46,7 +48,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
          return false; // window init fail
       }
 
-      if(!TheTextureManager::Instance()->load("assets/animate-alpha.png", "animate", m_pRenderer))
+      if(!TheTextureManager::Instance()->load("assets/animate-alpha_r.png", "animate", m_pRenderer))
       {
          return false;
       }
@@ -58,6 +60,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
          "animate")));
 
       TheInputHandler::Instance()->initialiseJoysticks();
+
+      m_pGameStateMachine = new GameStateMachine();
+      m_pGameStateMachine->changeState(new MenuState());
    }
    else
    {
@@ -72,21 +77,24 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
 void Game::render()
 {
    SDL_RenderClear(m_pRenderer); // clear the renderer to the draw color
-   // loop through our objects and draw them
-   for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-   {
-      m_gameObjects[i]->draw();
-   }
+   //// loop through our objects and draw them
+   //for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+   //{
+   //   m_gameObjects[i]->draw();
+   //}
+
+   m_pGameStateMachine->render();
    SDL_RenderPresent(m_pRenderer); // draw to the screen
 }
 
 void Game::update()
 {
-   // loop through and update our objects
-   for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
-   {
-      m_gameObjects[i]->update();
-   }
+   //// loop through and update our objects
+   //for (std::vector<GameObject*>::size_type i = 0; i != m_gameObjects.size(); i++)
+   //{
+   //   m_gameObjects[i]->update();
+   //}
+   m_pGameStateMachine->update();
 }
 
 void Game::clean()
@@ -106,6 +114,10 @@ void Game::quit()
 void Game::handleEvents()
 {
    TheInputHandler::Instance()->update();
+   if (TheInputHandler::Instance()->isKeyDown(SDL_SCANCODE_RETURN))
+   {
+      m_pGameStateMachine->changeState(new PlayState());
+   }
 }
 
 void Game::draw()

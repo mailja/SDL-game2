@@ -26,14 +26,16 @@ public:
 
    // init joysticks
    void initialiseJoysticks();
-   bool isKeyDown(SDL_Scancode key) const;
    bool joysticksInitialised() const { return m_bJoysticksInitialised; }
 
-   //void reset();
+   void reset();
 
    // update and clean the input handler
    void update();
    void clean();
+
+   // keyboard events
+   bool isKeyDown(SDL_Scancode key) const;
 
    // joystick events
    int getAxisX(int joy, int stick) const;
