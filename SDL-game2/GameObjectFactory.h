@@ -13,6 +13,17 @@ public:
 class GameObjectFactory
 {
 public:
+   static GameObjectFactory* Instance()
+   {
+      if (pInstance == 0)
+      {
+         pInstance = new GameObjectFactory();
+      }
+
+      return pInstance;
+   }
+
+
    bool registerType(std::string typeID, BaseCreator* pCreator)
    {
       std::map<std::string, BaseCreator*>::iterator it = m_creators.find(typeID);
@@ -39,5 +50,12 @@ public:
       return pCreator->createGameObject();
    }
 private:
+   GameObjectFactory() {}
+   ~GameObjectFactory() {}
+
    std::map<std::string, BaseCreator*> m_creators;
+
+   static GameObjectFactory* pInstance;
 };
+
+typedef GameObjectFactory TheGameObjectFactory;
