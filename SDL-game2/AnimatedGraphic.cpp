@@ -2,9 +2,13 @@
 
 #include <SDL_timer.h>
 
-AnimatedGraphic::AnimatedGraphic(const LoaderParams* pParams, int animSpeed) : SDLGameObject(pParams), m_animSpeed(animSpeed)
+AnimatedGraphic::AnimatedGraphic() : SDLGameObject()
 {
-   m_numFrames = pParams->getNumFrames();
+}
+
+void AnimatedGraphic::load(const LoaderParams* pParams)
+{
+   SDLGameObject::load(pParams);
 }
 
 void AnimatedGraphic::update()

@@ -1,11 +1,16 @@
 #pragma once
+#include "GameObjectFactory.h"
 #include "SDLGameObject.h"
 
 
 class MenuButton : public SDLGameObject
 {
 public:
-   MenuButton(const LoaderParams* pParams, void (*callback)());
+   MenuButton();
+   virtual ~MenuButton() = default;
+
+   virtual void load(const LoaderParams* pParams);
+
    virtual void draw();
    virtual void update();
    virtual void clean();
@@ -23,4 +28,13 @@ private:
    // syntax returnType (*functionName)(parameters);
    void (*m_callback)();  
 };
+
+class MenuButtonCreator : public BaseCreator
+{
+   GameObject* createGameObject() const
+   {
+      return new MenuButton();
+   }
+};
+
 
