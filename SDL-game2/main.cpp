@@ -20,8 +20,7 @@ int main(int argc, char* args[])
 
    Uint32 frameStart, frameTime;
 
-   if (TheGame::Instance()->init("Chapter 1", 100, 100, 640, 480,
-                                 false))
+   if (TheGame::Instance()->init("Game Engine", 100, 100, 640, 480, false))
    {
       std::cout << "game init success!\n";
       while (TheGame::Instance()->running())

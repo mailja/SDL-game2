@@ -1,23 +1,18 @@
-#include "PauseState.h"
+#include "MainMenuState.h"
+
+#include <iostream>
+
 
 #include "Game.h"
-#include "InputHandler.h"
-#include "MainMenuState.h"
 #include "MenuButton.h"
-#include "MenuState.h"
+#include "PlayState.h"
 #include "StateParser.h"
+#include "TextureManager.h"
 
-const std::string PauseState::s_pauseID = "PAUSE";
+const std::string MainMenuState::s_menuID = "MENU";
 
-void PauseState::s_pauseToMain()
-{
-   TheGame::Instance()->getStateMachine()->changeState(new MainMenuState());
-}
-void PauseState::s_resumePlay()
-{
-   TheGame::Instance()->getStateMachine()->popState();
-}
-void PauseState::update()
+
+void MainMenuState::update()
 {
    for (int i = 0; i < m_gameObjects.size(); i++)
    {
@@ -25,7 +20,7 @@ void PauseState::update()
    }
 }
 
-void PauseState::render()
+void MainMenuState::render()
 {
    for (int i = 0; i < m_gameObjects.size(); i++)
    {
@@ -33,41 +28,53 @@ void PauseState::render()
    }
 }
 
-bool PauseState::onEnter()
+bool MainMenuState::onEnter()
 {
    // parse the state
    StateParser stateParser;
-   stateParser.parseState("assets/test.xml", s_pauseID, &m_gameObjects, &m_textureIDList);
+   stateParser.parseState("assets/test.xml", s_menuID, &m_gameObjects, &m_textureIDList);
 
    m_callbacks.push_back(0);
-   m_callbacks.push_back(s_pauseToMain);
-   m_callbacks.push_back(s_resumePlay);
+   m_callbacks.push_back(s_menuToPlay);
+   m_callbacks.push_back(s_exitFromMenu);
 
+   // set the callbacks for menu items
    setCallbacks(m_callbacks);
 
-   std::cout << "entering PauseState\n";
+   std::cout << "entering MenuState\n";
    return true;
 }
 
-bool PauseState::onExit()
+bool MainMenuState::onExit()
 {
    for (int i = 0; i < m_gameObjects.size(); i++)
    {
       m_gameObjects[i]->clean();
    }
    m_gameObjects.clear();
+
    // clear the texture manager
    for (int i = 0; i < m_textureIDList.size(); i++)
    {
       TheTextureManager::Instance()->clearFromTextureMap(m_textureIDList[i]);
    }
-   // reset the mouse button states to false
-   TheInputHandler::Instance()->reset();
-   std::cout << "exiting PauseState\n";
+
+   std::cout << "exiting MenuState\n";
    return true;
 }
 
-void PauseState::setCallbacks(const std::vector<Callback>& callbacks)
+void MainMenuState::s_menuToPlay()
+{
+   std::cout << "Play button clicked\n";
+   TheGame::Instance()->getStateMachine()->changeState(new PlayState());
+}
+void MainMenuState::s_exitFromMenu()
+{
+   std::cout << "Exit button clicked\n";
+   TheGame::Instance()->quit();
+}
+
+void MainMenuState::setCallbacks(const std::vector<Callback>& callbacks)
 {
    // go through the game objects
    if (!m_gameObjects.empty())

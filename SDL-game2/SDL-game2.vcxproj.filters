@@ -36,7 +36,7 @@
     <ClCompile Include="InputHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuState.cpp">
+    <ClCompile Include="MainMenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PlayState.cpp">
@@ -68,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="tinyxmlparser.cpp">
       <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StateParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectFactory.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,7 +107,7 @@
     <ClInclude Include="GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuState.h">
+    <ClInclude Include="MainMenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayState.h">
@@ -131,7 +137,10 @@
     <ClInclude Include="GameObjectFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerCreator.h">
+    <ClInclude Include="StateParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

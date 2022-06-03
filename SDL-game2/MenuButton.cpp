@@ -10,6 +10,8 @@ MenuButton::MenuButton() : SDLGameObject(), m_bReleased(true), m_callback(0)
 void MenuButton::load(const LoaderParams* pParams)
 {
    SDLGameObject::load(pParams);
+   m_callbackID = pParams->getCallbackID();
+   m_currentFrame = MOUSE_OUT;
 }
 
 void MenuButton::draw()

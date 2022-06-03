@@ -1,11 +1,11 @@
 #pragma once
 #include <vector>
 
-#include "GameState.h"
+#include "MenuState.h"
 
 class GameObject;
 
-class PauseState : public GameState
+class PauseState : public MenuState
 {
 public:
    virtual void update();
@@ -13,6 +13,7 @@ public:
    virtual bool onEnter();
    virtual bool onExit();
    virtual std::string getStateID() const { return s_pauseID; }
+   virtual void setCallbacks(const std::vector<Callback>& callbacks);
 private:
    static void s_pauseToMain();
    static void s_resumePlay();

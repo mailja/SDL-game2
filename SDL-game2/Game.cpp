@@ -4,11 +4,16 @@
 #include <vector>
 
 
+
+#include "AnimatedGraphic.h"
 #include "Enemy.h"
 #include "InputHandler.h"
+#include "MainMenuState.h"
+#include "MenuButton.h"
 #include "MenuState.h"
 #include "PlayState.h"
 #include "TextureManager.h"
+
 
 Game* Game::s_pInstance = nullptr;
 
@@ -48,21 +53,16 @@ bool Game::init(const char* title, int xpos, int ypos, int width,
          return false; // window init fail
       }
 
-      if(!TheTextureManager::Instance()->load("assets/animate-alpha_r.png", "animate", m_pRenderer))
-      {
-         return false;
-      }
-
-      m_gameObjects.push_back(new Player(new LoaderParams(100, 100, 128, 82,
-         "animate")));
-
-      m_gameObjects.push_back(new Enemy(new LoaderParams(300, 300, 128, 82,
-         "animate")));
+      // register the types for the game
+      TheGameObjectFactory::Instance()->registerType("MenuButton", new MenuButtonCreator());
+      TheGameObjectFactory::Instance()->registerType("Player", new PlayerCreator());
+      TheGameObjectFactory::Instance()->registerType("Enemy", new EnemyCreator());
+      TheGameObjectFactory::Instance()->registerType("AnimatedGraphic", new AnimatedGraphicCreator());
 
       TheInputHandler::Instance()->initialiseJoysticks();
 
       m_pGameStateMachine = new GameStateMachine();
-      m_pGameStateMachine->changeState(new MenuState());
+      m_pGameStateMachine->changeState(new MainMenuState());
    }
    else
    {
@@ -101,6 +101,13 @@ void Game::clean()
 {
    std::cout << "cleaning game\n";
    TheInputHandler::Instance()->clean();
+
+   //m_pGameStateMachine->clean();
+
+   m_pGameStateMachine = 0;
+   delete m_pGameStateMachine;
+
+   TheTextureManager::Instance()->clearTextureMap();
    SDL_DestroyWindow(m_pWindow);
    SDL_DestroyRenderer(m_pRenderer);
    SDL_Quit();
