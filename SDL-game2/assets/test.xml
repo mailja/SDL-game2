@@ -2,8 +2,8 @@
 <States>
     <MENU>
         <TEXTURES>
-            <texture filename="button.png" ID="playbutton"/>
-            <texture filename="exit.png" ID="exitbutton"/>
+            <texture filename="assets/button_r.png" ID="playbutton"/>
+            <texture filename="assets/exit_r.png" ID="exitbutton"/>
         </TEXTURES>
         
         <OBJECTS>
@@ -14,8 +14,8 @@
     
     <PLAY>
         <TEXTURES>
-            <texture filename="helicopter.png" ID="helicopter"/>
-            <texture filename="helicopter2.png" ID="helicopter2"/>
+            <texture filename="assets/helicopter_r.png" ID="helicopter"/>
+            <texture filename="assets/helicopter2_r.png" ID="helicopter2"/>
         </TEXTURES>
         
         <OBJECTS>
@@ -26,8 +26,8 @@
     
     <PAUSE>
         <TEXTURES>
-            <texture filename="resume.png" ID="resumebutton"/>
-            <texture filename="main.png" ID="mainbutton"/>
+            <texture filename="assets/resume_r.png" ID="resumebutton"/>
+            <texture filename="assets/main_r.png" ID="mainbutton"/>
         </TEXTURES>
         
         <OBJECTS>
@@ -39,9 +39,9 @@
     
     <GAMEOVER>
         <TEXTURES>
-            <texture filename="gameover.png" ID="gameovertext"/>
-            <texture filename="main.png" ID="mainbutton"/>
-            <texture filename="restart.png" ID="restartbutton"/>
+            <texture filename="assets/gameover_r.png" ID="gameovertext"/>
+            <texture filename="assets/main_r.png" ID="mainbutton"/>
+            <texture filename="assets/restart_r.png" ID="restartbutton"/>
         </TEXTURES>
         
         <OBJECTS>
