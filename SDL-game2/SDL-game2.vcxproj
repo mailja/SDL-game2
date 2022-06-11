@@ -124,6 +124,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\src\zlib128-dll\include;C:\Projects\SDL2_image-2.0.1\include;C:\Projects\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,6 +132,9 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\src\zlib128-dll\lib;C:\Projects\SDL2_image-2.0.1\lib\x64;C:\Projects\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -205,6 +209,12 @@
     <ClInclude Include="tinystr.h" />
     <ClInclude Include="tinyxml.h" />
     <ClInclude Include="Vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

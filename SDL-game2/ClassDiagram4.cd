@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AnimatedGraphic">
+    <Position X="0.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAIIAAAAQIAAAAAAAAAAAAAABBAAAAEAAA=</HashCode>
+      <FileName>AnimatedGraphic.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimatedGraphicCreator" Collapsed="true">
+    <Position X="10.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>AnimatedGraphic.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy">
+    <Position X="3" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAIAIAAAAAAIAAAAAAAAAAAAAAABAAAAEAAA=</HashCode>
+      <FileName>Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyCreator" Collapsed="true">
+    <Position X="13" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game">
+    <Position X="12.5" Y="16.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQIAAACAAQRAgQAMEAACAAAiAAIIAQAFhAIAVAgA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject">
+    <Position X="1.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAIAAAAAAAAIAAAAAAAAAAAAAAABAAAIEAAA=</HashCode>
+      <FileName>GameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseCreator" Collapsed="true">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>GameObjectFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObjectFactory">
+    <Position X="8.5" Y="16.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAIAAAAAAQiBCAAAAAAA=</HashCode>
+      <FileName>GameObjectFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameOverState" Collapsed="true">
+    <Position X="8.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAABAAAABAAAAAAAAQAAABMAACUAAA=</HashCode>
+      <FileName>GameOverState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameState">
+    <Position X="11.25" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAABAAAAgAAAAAAABAAACUAAA=</HashCode>
+      <FileName>GameState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameStateMachine" Collapsed="true">
+    <Position X="14.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAIAAAAAAQAAIAAAgAAAAAAAAEAAAAUAAA=</HashCode>
+      <FileName>GameStateMachine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputHandler">
+    <Position X="16.25" Y="10.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>SQgQAAAEAQAAAgACgAQgEoAAIAAAEABAQAlCAAAHAAc=</HashCode>
+      <FileName>InputHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Layer">
+    <Position X="0.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAA=</HashCode>
+      <FileName>Layer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Level">
+    <Position X="10.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACAAAEAAAAAAAAAAAAAAAAAAAAAABABAAgAAAAUQAA=</HashCode>
+      <FileName>Level.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelParser">
+    <Position X="13.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAARAAAAAAAAEAAAAgCAAAAEQAAAAAA=</HashCode>
+      <FileName>LevelParser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoaderParams" Collapsed="true">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAABAAAAIKAABAAAgEAgAQAAAwACAAAQAAGAAAAA=</HashCode>
+      <FileName>LoaderParams.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuButton">
+    <Position X="7.5" Y="7.25" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="MenuButton::button_state" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MenuButton.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAABIAIAAAAgABAIAAAAAAAAAAAQAAARAABAEAAA=</HashCode>
+      <FileName>MenuButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuButtonCreator" Collapsed="true">
+    <Position X="17.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>MenuButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuState" Collapsed="true">
+    <Position X="11" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IABAQAAAAAAAAAAABAAAABAAAAEAIAAAAABAAACUAAA=</HashCode>
+      <FileName>MainMenuState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuState">
+    <Position X="9.75" Y="10.5" Width="2.5" />
+    <NestedTypes>
+      <Typedef Name="MenuState::Callback" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MenuState.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MenuState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseState" Collapsed="true">
+    <Position X="6.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAABAAAABAAAAAAIAAAAABAAAC0AQA=</HashCode>
+      <FileName>PauseState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player">
+    <Position X="5.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAIAAAAAAAAIAAAAAAAAAAAAAAABAAQAEAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerCreator" Collapsed="true">
+    <Position X="15.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayState">
+    <Position X="13" Y="10.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AEAAQAAAAAAAAAAAAgAAABAAAIAAAAAAAABAAACUAAA=</HashCode>
+      <FileName>PlayState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SDLGameObject">
+    <Position X="4" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAAIAAAAKAIAAABgAKgAAAAAAAAQASAAABAAAAFCBA=</HashCode>
+      <FileName>SDLGameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StateParser" Collapsed="true">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQAAAgAAAAAAAAAAAAAAAAAAAAAAAEAQAAAAAAAA=</HashCode>
+      <FileName>StateParser.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureManager">
+    <Position X="4.5" Y="16.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAEAABAIAAAAABAAAAEAAQAEAIAAACAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TileLayer">
+    <Position X="0.5" Y="13.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEBACQAEAAAQAEAAABAAAAAAAQAAAAEAAQUAAA=</HashCode>
+      <FileName>TileLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vector2D" Collapsed="true">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQEAAAAEAGAQAAQAAAAAAAAAAgAGAAAAA=</HashCode>
+      <FileName>Vector2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlParsingData" Collapsed="true">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAQABAAEAAAAAAAAAAEEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>tinyxmlparser.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlAttributeSet" Collapsed="true">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQAAQAAABAAAAAAJAAAAACAiQAAAAAA=</HashCode>
+      <FileName>tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiXmlHandle" Collapsed="true">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAEAAAAEAAAIAAAEgAIAABAAAAAAAAAIEoCAEAABA=</HashCode>
+      <FileName>tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Tileset" Collapsed="true">
+    <Position X="20" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQQAQAAAAAAAAQAkAAAAAAAAAAAQAEE=</HashCode>
+      <FileName>Level.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TiXmlCursor" Collapsed="true">
+    <Position X="21.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQACAAAAAAAAAAAABABAAAA=</HashCode>
+      <FileName>tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="TheGame" Collapsed="true">
+    <Position X="12.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TheGameObjectFactory" Collapsed="true">
+    <Position X="8.5" Y="14.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjectFactory.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TheInputHandler" Collapsed="true">
+    <Position X="17.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputHandler.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TheTextureManager" Collapsed="true">
+    <Position X="4.5" Y="14.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="mouse_buttons" Collapsed="true">
+    <Position X="21.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAABAgAAAAAAAAAAA=</HashCode>
+      <FileName>InputHandler.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="__unnamed_enum_0430_1" Collapsed="true">
+    <Position X="20" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAACABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TiXmlEncoding" Collapsed="true">
+    <Position X="23.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAAAAAAABAAAA=</HashCode>
+      <FileName>tinyxml.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

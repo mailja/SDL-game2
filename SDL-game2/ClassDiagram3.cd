@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AnimatedGraphicCreator">
+    <Position X="4.75" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>AnimatedGraphic.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyCreator">
+    <Position X="7.75" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game">
+    <Position X="12.5" Y="12.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQIAAACAAQRAgQAMEAACAAAiAAIIAQAFhAIAVAgA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseCreator">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>GameObjectFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObjectFactory">
+    <Position X="8.5" Y="12.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAIAAAAAAQiBCAAAAAAA=</HashCode>
+      <FileName>GameObjectFactory.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputHandler">
+    <Position X="16.5" Y="13" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>SQgQAAAEAQAAAgACgAQgEoAAIAAAEABAQAlCAAAHAAc=</HashCode>
+      <FileName>InputHandler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Layer">
+    <Position X="1" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAA=</HashCode>
+      <FileName>Layer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuButtonCreator">
+    <Position X="13.75" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>MenuButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerCreator">
+    <Position X="10.75" Y="7" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureManager">
+    <Position X="4.75" Y="12.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAEAABAIAAAAABAAAAEAAQAEAIAAACAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TileLayer">
+    <Position X="0.75" Y="12.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEBACQAEAAAQAEAAABAAAAAAAQAAAAEAAQUAAA=</HashCode>
+      <FileName>TileLayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="TheGame" Collapsed="true">
+    <Position X="12.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TheGameObjectFactory" Collapsed="true">
+    <Position X="8.5" Y="10.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjectFactory.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TheInputHandler" Collapsed="true">
+    <Position X="17.25" Y="10.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InputHandler.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TheTextureManager" Collapsed="true">
+    <Position X="4.75" Y="10.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextureManager.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
