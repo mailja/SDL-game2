@@ -20,6 +20,11 @@ Game* Game::s_pInstance = nullptr;
 bool Game::init(const char* title, int xpos, int ypos, int width,
    int height, bool fullscreen)
 {
+
+   // store the game width and height
+   m_gameWidth = width;
+   m_gameHeight = height;
+
    // attempt to initialize SDL
    if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
    {

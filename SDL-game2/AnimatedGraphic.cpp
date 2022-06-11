@@ -10,6 +10,7 @@ void AnimatedGraphic::load(const LoaderParams* pParams)
 {
    SDLGameObject::load(pParams);
    m_animSpeed = pParams->getAnimSpeed();
+   m_numFrames = pParams->getNumFrames();
 }
 
 void AnimatedGraphic::update()

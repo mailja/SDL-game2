@@ -7,6 +7,7 @@
 #include "Game.h"
 #include "GameOverState.h"
 #include "InputHandler.h"
+#include "LevelParser.h"
 #include "MenuButton.h"
 #include "PauseState.h"
 #include "StateParser.h"
@@ -23,26 +24,23 @@ void PlayState::update()
    {
       m_gameObjects[i]->update();
    }
-   if (checkCollision(dynamic_cast<SDLGameObject*>
+   /*if (checkCollision(dynamic_cast<SDLGameObject*>
       (m_gameObjects[0]), dynamic_cast<SDLGameObject*>
       (m_gameObjects[1])))
    {
       TheGame::Instance()->getStateMachine()->pushState(new GameOverState());
-   }
+   }*/
+
+   pLevel->update();
 }
 void PlayState::render()
 {
-   for (int i = 0; i < m_gameObjects.size(); i++)
-   {
-      m_gameObjects[i]->draw();
-   }
+   pLevel->render();
 }
 bool PlayState::onEnter()
 {
-   // parse the state
-   StateParser stateParser;
-   stateParser.parseState("assets/test.xml", s_playID, &m_gameObjects, &m_textureIDList);
-
+   LevelParser levelParser;
+   pLevel = levelParser.parseLevel("assets/map3.tmx");
    std::cout << "entering PlayState\n";
    return true;
 }

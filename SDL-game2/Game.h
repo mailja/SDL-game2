@@ -40,11 +40,17 @@ public:
    GameStateMachine* m_pGameStateMachine;
    GameStateMachine* getStateMachine() { return m_pGameStateMachine; }
 
+   int getGameWidth() const { return m_gameWidth; }
+   int getGameHeight() const { return m_gameHeight; }
+
 private:
 
    Game() = default;
    // create the s_pInstance member variable
    static Game* s_pInstance;
+
+   int m_gameWidth;
+   int m_gameHeight;
 
    SDL_Window* m_pWindow = 0;
    SDL_Renderer* m_pRenderer = 0;
