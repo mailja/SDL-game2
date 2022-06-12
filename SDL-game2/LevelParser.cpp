@@ -23,6 +23,18 @@ Level* LevelParser::parseLevel(const char* levelFile)
    pRoot->Attribute("tilewidth", &m_tileSize);
    pRoot->Attribute("width", &m_width);
    pRoot->Attribute("height", &m_height);
+
+   //we know that properties is the first child of the root
+   TiXmlElement* pProperties = pRoot->FirstChildElement();
+
+   // we must parse the textures needed for this level, which have been added to properties
+   for (TiXmlElement* e = pProperties->FirstChildElement(); e != NULL; e = e->NextSiblingElement())
+   {
+      if (e->Value() == std::string("property"))
+      {
+         parseTextures(e);
+      }
+   }
    // parse the tilesets
    for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e =
       e->NextSiblingElement())
@@ -30,15 +42,6 @@ Level* LevelParser::parseLevel(const char* levelFile)
       if (e->Value() == std::string("tileset"))
       {
          parseTilesets(e, pLevel->getTilesets());
-      }
-   }
-   // parse any object layers
-   for (TiXmlElement* e = pRoot->FirstChildElement(); e != NULL; e =
-      e->NextSiblingElement())
-   {
-      if (e->Value() == std::string("layer"))
-      {
-         parseTileLayer(e, pLevel->getLayers(), pLevel->getTilesets());
       }
    }
    // parse any object layers
