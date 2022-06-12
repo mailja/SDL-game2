@@ -231,7 +231,7 @@
     </TypeIdentifier>
   </Class>
   <Struct Name="Tileset">
-    <Position X="3.5" Y="12.75" Width="1.75" />
+    <Position X="3.5" Y="13.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQQAQAAAAAAAAQAkAAAAAAAAAAAQAEE=</HashCode>
       <FileName>Level.h</FileName>
